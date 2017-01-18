@@ -9,6 +9,9 @@
 
                 <div class="panel-body">
                     You are logged in!
+
+                   <h2>Github profile Search</h2>
+                    @yield('githubform')
                 </div>
             </div>
         </div>

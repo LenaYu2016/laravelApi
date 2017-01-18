@@ -162,7 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Illuminate\Html\HtmlServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -233,6 +233,8 @@ return [
         'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+        'Forms'=>Illuminate\Html\FormFacade::class,
+        'Html'=>Illuminate\Html\HtmlFacade::class,
     ],
 
 ];

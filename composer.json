@@ -6,11 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "Guzzlehttp/Guzzle": "6.0.1",
+        "illuminate/html": "^5.0",
         "laravel/framework": "5.3.*",
         "laravel/socialite": "^2.0",
-        "sammyk/laravel-facebook-sdk": "^3.0",
         "lucadegasperi/oauth2-server-laravel": " 5.2.0",
-        "Guzzlehttp/Guzzle":"6.0.1"
+        "sammyk/laravel-facebook-sdk": "^3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
