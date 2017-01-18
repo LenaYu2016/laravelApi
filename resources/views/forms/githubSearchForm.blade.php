@@ -1,4 +1,4 @@
-@extends('home')
+@extends('./home')
 @section('githubform')
 {!! Form::open(array('url' => '/handlegithub', 'method' => 'post')) !!}
 <div class="form-group row">

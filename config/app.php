@@ -162,7 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Illuminate\Html\HtmlServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -182,7 +182,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
-
+        Collective\Html\HtmlServiceProvider::class
     ],
 
     /*
@@ -233,8 +233,8 @@ return [
         'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
-        'Forms'=>Illuminate\Html\FormFacade::class,
-        'Html'=>Illuminate\Html\HtmlFacade::class,
+        'Form'=>Collective\Html\FormFacade::class,
+        'Html'=>Collective\Html\HtmlFacade::class,
     ],
 
 ];
