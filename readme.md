@@ -1,8 +1,8 @@
 Main perpose: this project use laravel5 framework to interact with g+ api,facebook api,twitter api,github api
 Function:
-1.register with facebook
-2.register with github
-3.register with g+
-4.register with twitter
+1.Login with facebook
+2.Login with github
+3.Login with g+
+4.Login with twitter
 5.search github profile by github name
 7....
