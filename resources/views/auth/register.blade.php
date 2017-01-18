@@ -72,47 +72,8 @@
 
 
                     </form>
-                    <div class="form-group row">
-                        <div class="col-md-6 col-md-offset-4">
-                            <a href="{{action('Auth\RegisterController@redirectToProvider',['github'])}}">
-                                <button type="submit" class="btn btn-primary">
-                                    Register with Github
-                                </button>
-                            </a>
-                        </div>
 
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-6 col-md-offset-4">
-                            <a href="{{action('Auth\RegisterController@redirectToProvider',['facebook'])}}">
-                                <button type="submit" class="btn btn-primary">
-                                    Register with Facebook
-                                </button>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-6 col-md-offset-4">
-                            <a href="{{action('Auth\RegisterController@redirectToProvider',['google'])}}">
-                                <button  class="btn btn-primary">
-                                    Register with Google
-                                </button>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-6 col-md-offset-4">
-                            <a href="{{action('Auth\RegisterController@redirectToProvider',['twitter'])}}">
-                                <button class="btn btn-primary">
-                                    Register with Twitter
-                                </button>
-                            </a>
-
-                        </div>
-
-                    </div>
+                </div>
             </div>
         </div>
     </div>

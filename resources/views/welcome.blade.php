@@ -81,7 +81,7 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-                <a href="redirect">FB Login</a>
+
 
             </div>
         </div>

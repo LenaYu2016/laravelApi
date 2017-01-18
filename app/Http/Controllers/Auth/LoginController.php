@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
+use App\User;
+use App\Http\Controllers\Auth;
 class LoginController extends Controller
 {
     /*
@@ -38,31 +40,8 @@ class LoginController extends Controller
     }
 
 
-    public function redirectToProvider($provider)
-    {
-        return Socialite::driver($provider)->redirect();
-    }
 
-    /**
-     * Obtain the user information from GitHub.
-     *
-     * @return Response
-     */
-    public function handleProviderCallback($provider)
-    {
-        try{
-            $user = Socialite::driver($provider)->user();
-            }catch(Exception $e){
-            return redirect('/');
-        }
-        if($user) {
-           if($authuser= User::FindByEmail($user->getEmail())) {
-               Auth::login($authuser);
-           }
-        }
-            return redirect('/');
 
-    }
 
 
 }
