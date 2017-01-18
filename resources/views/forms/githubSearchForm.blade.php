@@ -12,4 +12,5 @@
 <div class="form-group">
 {!! Form::sumit('Search',['class'=>['form-control']]) !!}
 </div>
+    {!! Form::close() !!}
 @stop
