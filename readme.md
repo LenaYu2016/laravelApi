@@ -5,3 +5,5 @@ Function:
 3.register with g+
 4.register with twitter
 5.unique email validation
+6.search github profile by github name
+7....
