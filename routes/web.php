@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('handlegithub', 'GithubController@handleGithub');
+Route::post('handlegithub', 'GithubController@handleGithub');
 
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
