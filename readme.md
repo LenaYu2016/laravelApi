@@ -5,6 +5,7 @@ Function:
 3.Login with g+
 4.Login with twitter
 5.search github profile by github name
+6.write github gists
 7....
 (Auth/AuthController,GithubController)
 
