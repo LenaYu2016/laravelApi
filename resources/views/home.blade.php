@@ -13,6 +13,9 @@
                   @include('forms.githubSearchForm')
                     <h2>Github gists</h2>
                     @include('forms.githubPostGistsForm')
+                    <h2>Facebook share</h2>
+                    @include('forms.facebookshare')
+
                 </div>
             </div>
 

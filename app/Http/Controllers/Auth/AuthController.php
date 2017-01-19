@@ -11,8 +11,9 @@ class AuthController extends Controller
 {
 
     public function redirectToProvider($provider)
-    {
+    {   if($provider=='github')
         return Socialite::driver($provider)->scopes(['user', 'gist','repo'])->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
     public function handleProviderCallback($provider)

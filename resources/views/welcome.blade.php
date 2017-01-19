@@ -79,11 +79,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                   Welcome,guys
                 </div>
 
 
             </div>
         </div>
-    </body>
+
+</body>
 </html>

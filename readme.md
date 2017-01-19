@@ -6,7 +6,8 @@ Function:
 4.Login with twitter
 5.search github profile by github name
 6.write github gists
-7....
+7.share posts on facebook after login
+8....
 (Auth/AuthController,GithubController)
 
 
