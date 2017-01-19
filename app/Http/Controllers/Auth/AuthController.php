@@ -12,7 +12,7 @@ class AuthController extends Controller
 
     public function redirectToProvider($provider)
     {
-        return Socialite::driver($provider)->redirect();
+        return Socialite::driver($provider)->scopes(['user', 'gist','repo'])->redirect();
     }
 
     public function handleProviderCallback($provider)
@@ -27,6 +27,7 @@ class AuthController extends Controller
             $authuser = $this->findOrCreateUser($user, $provider);
 
             if($authuser){
+                session(['auth2' => $user->token]);
                 Auth::login($authuser);
             }else{
                 return redirect()->to('login');
