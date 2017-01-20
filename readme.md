@@ -7,7 +7,8 @@ Function:
 5.search github profile by github name
 6.write github gists
 7.share posts on facebook after login
-8....
+8.send message or posts to friends by facebook messenger
+9....
 (Auth/AuthController,GithubController)
 
 

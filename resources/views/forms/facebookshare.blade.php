@@ -4,17 +4,17 @@
 {!! Form::open() !!}
 <div class="form-group row">
     <div class="col-md-2">
-        {!! Form::label('link','Link:') !!}
+        {!! Form::label($linkId,'Link:') !!}
     </div>
     <div class="col-md-6">
-        {!! Form::text('link',null,['placeholder'=>'Please enter link','class'=>'form-control ']) !!}
+        {!! Form::text($linkId,null,['placeholder'=>'Please enter link','class'=>'form-control ']) !!}
     </div>
 </div>
 
 <div class="form-group row">
     <div class="col-md-4 col-md-offset-2">
         <a>
-        {!! Form::button('Share',['class'=>'form-control btn btn-success clearfix','id'=>"shareBtn"]) !!}
+        {!! Form::button($button,['class'=>'form-control btn btn-success clearfix','id'=>$buttonId]) !!}
         </a>
     </div>
 </div>

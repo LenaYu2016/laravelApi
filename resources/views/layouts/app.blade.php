@@ -94,10 +94,24 @@
                 if (response) {
                    alert('shared!!!')
                 } else {
-                    alert('Invalid link!!!.');
+                    alert('Failed!!!.');
                 }
             });
-        }
+        };
+
+        document.getElementById('sendBtn').onclick = function() {
+            var link=document.getElementById('sendlink').value;
+console.log(document.getElementById('sendlink'));
+        FB.ui({
+            method: 'send',
+            link: link,
+        }, function(response){
+            if (response) {
+                alert('sent!!!')
+            } else {
+                alert('Failed!!!.');
+            }
+        });};
     </script><script>
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
