@@ -1,4 +1,5 @@
-Main perpose: this project use laravel5 framework to interact with g+ api,facebook api,twitter api,github api
+Main perpose: this project use laravel5 framework to interact with g+ api,facebook api,twitter api,github api,
+stripe api
 Function:
 1.Login with facebook
 2.Login with github
@@ -8,7 +9,7 @@ Function:
 6.write github gists
 7.share posts on facebook after login
 8.send message or posts to friends by facebook messenger
-9....
+9.online payment with stripe api(test mode)
 (Auth/AuthController,GithubController)
 
 
