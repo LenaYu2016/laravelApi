@@ -10,6 +10,8 @@ Function:
 7.share posts on facebook after login
 8.send message or posts to friends by facebook messenger
 9.online payment with stripe api(test mode)
+10.custom online payment
+11....
 (Auth/AuthController,GithubController)
 
 
