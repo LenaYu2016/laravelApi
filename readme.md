@@ -2,17 +2,17 @@ Main perpose: this project use laravel5 framework to interact with g+ api,facebo
 stripe api
 Function:
 
-* Item Login with facebook
-* Item Login with github
-* Item Login with g+
-* Item Login with twitter
-* Item search github profile by github name
-* Item write github gists
-* Item share posts on facebook after login
-* Item send message or posts to friends by facebook messenger
-* Item online payment with stripe api(test mode)
-* Item custom online payment
-* Item ....
+*  Login with facebook
+*  Login with github
+*  Login with g+
+*  Login with twitter
+*  search github profile by github name
+*  write github gists
+*  share posts on facebook after login
+*  send message or posts to friends by facebook messenger
+*  online payment with stripe api(test mode)
+*  custom online payment
+*  ....
 (Auth/AuthController,GithubController)
 
 
