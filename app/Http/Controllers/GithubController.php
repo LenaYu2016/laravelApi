@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use Socialite;
-
+use ReCaptcha\ReCaptcha;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\GithubGistPostRequest;
 class GithubController extends Controller
 {
     protected $githubClient;
@@ -28,21 +30,40 @@ class GithubController extends Controller
 
 
     }
-    public function githubPostGists(Request $request){
 
-        $this->validate($request,['filename'=>'required|min:3']);
+    public function githubPostGists(GithubGistPostRequest $request){
+        $datas= $request->all();
 
+        $response=$request->input('g-recaptcha-response');
+        $remoteip = $_SERVER['REMOTE_ADDR'];
+        $secret   = env('RE_CAP_SECRET');
+        $recaptcha = new ReCaptcha($secret);
+        $resp = $recaptcha->verify($response, $remoteip);
+        if ($resp->isSuccess()) {
+            $data='{"files":{"'.$request->input('filename').'": {"content": "'.$request->input('code').'"}}}';
+            $url=$this->baseUrl.'/gists?access_token='.session('auth2');
 
-        $data='{"files":{"'.$request->input('filename').'": {"content": "'.$request->input('code').'"}}}';
-        $url=$this->baseUrl.'/gists?access_token='.session('auth2');
+            ;if($this->curl($url,$data,1,CURLOPT_POST)){
+                \Session::flash('message','Post gists successfully!');
 
-        ;if($this->curl($url,$data,1,'CURLOPT_POST')){
-            \Session::flash('message','Post gists successfully!');
+            }else{
+                \Session::flash('meessage','fail to post.');
+            }
+            return redirect('/home');
 
-       }else{
-        \Session::flash('meessage','fail to post.');
+        } else {
+            return redirect('/home');
         }
-       return redirect('/home');
+
+
+       /* Validator::make($datas, [
+            'filename'=>'required|min:3',
+            'captcha' => 'required|min:1',
+        ],['g-recaptcha-response.required' => 'Captcha is required',
+            'captcha.min'=> 'Wrong captcha, please try again.'])->validate();*/
+        // $this->validate($request,['filename'=>'required|min:3','g-recaptcha-response'=>'required']);
+
+
 
     }
     public function curl($url,$data,$count,$method){

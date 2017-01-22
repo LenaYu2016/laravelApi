@@ -19,6 +19,9 @@
         </div>
     </div>
     <div class="form-group row">
+    <div class="g-recaptcha col-md-6 col-md-offset-2" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
+    </div>
+    <div class="form-group row">
         <div class="col-md-4 col-md-offset-2">
             {!! Form::submit('Gist',['class'=>'form-control']) !!}
         </div>

@@ -121,5 +121,6 @@ console.log(document.getElementById('sendlink'));
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
     <script src="/js/app.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </body>
 </html>

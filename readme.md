@@ -1,5 +1,5 @@
 Main perpose: this project use laravel5 framework to interact with g+ api,facebook api,twitter api,github api,
-stripe api
+stripe api,google recaptcha api.
 Function:
 
 *  Login with facebook
@@ -12,7 +12,8 @@ Function:
 *  send message or posts to friends by facebook messenger
 *  online payment with stripe api(test mode)
 *  custom online payment
-*  ....
+*  form recaptcha feature with google recaptcha api
+*  ...
 (Auth/AuthController,GithubController)
 
 
