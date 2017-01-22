@@ -30,15 +30,19 @@ class GithubController extends Controller
 
 
     }
-
-    public function githubPostGists(GithubGistPostRequest $request){
-        $datas= $request->all();
-
-        $response=$request->input('g-recaptcha-response');
+    public function createReCaptcha($response){
         $remoteip = $_SERVER['REMOTE_ADDR'];
         $secret   = env('RE_CAP_SECRET');
         $recaptcha = new ReCaptcha($secret);
         $resp = $recaptcha->verify($response, $remoteip);
+        return $resp;
+    }
+
+    public function githubPostGists(GithubGistPostRequest $request){
+
+
+        $response=$request->input('g-recaptcha-response');
+        $resp=$this->createReCaptcha($response);
         if ($resp->isSuccess()) {
             $data='{"files":{"'.$request->input('filename').'": {"content": "'.$request->input('code').'"}}}';
             $url=$this->baseUrl.'/gists?access_token='.session('auth2');
