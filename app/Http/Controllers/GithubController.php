@@ -59,16 +59,6 @@ class GithubController extends Controller
             return redirect('/home');
         }
 
-
-       /* Validator::make($datas, [
-            'filename'=>'required|min:3',
-            'captcha' => 'required|min:1',
-        ],['g-recaptcha-response.required' => 'Captcha is required',
-            'captcha.min'=> 'Wrong captcha, please try again.'])->validate();*/
-        // $this->validate($request,['filename'=>'required|min:3','g-recaptcha-response'=>'required']);
-
-
-
     }
     public function curl($url,$data,$count,$method){
         $ch = curl_init();
