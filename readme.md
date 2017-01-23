@@ -14,6 +14,9 @@ Function:
 *  custom online payment
 *  form recaptcha feature with google recaptcha api
 *  send SMS with nexmo api
-(Auth/AuthController,GithubController)
+
+
+
+(Auth/AuthController,GithubController,SendMessageController,PaymentController,CurlTrait,GithubGistPostRequest,views/forms,views/github)
 
 
