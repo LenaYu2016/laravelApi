@@ -9,8 +9,9 @@ use Socialite;
 use ReCaptcha\ReCaptcha;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\GithubGistPostRequest;
+use App\Http\Controllers\CurlTrait;
 class GithubController extends Controller
-{
+{    use CurlTrait;
     protected $githubClient;
     protected $baseUrl='https://api.github.com';
     protected $auth2token;
@@ -47,7 +48,10 @@ class GithubController extends Controller
             $data='{"files":{"'.$request->input('filename').'": {"content": "'.$request->input('code').'"}}}';
             $url=$this->baseUrl.'/gists?access_token='.session('auth2');
 
-            ;if($this->curl($url,$data,1,CURLOPT_POST)){
+            ;if($this->curl($url,$data,1,CURLOPT_POST, array(
+                'User-Agent: curl/7.45.0',
+                'Content-Type:application/json'
+            ))){
                 \Session::flash('message','Post gists successfully!');
 
             }else{
@@ -60,19 +64,5 @@ class GithubController extends Controller
         }
 
     }
-    public function curl($url,$data,$count,$method){
-        $ch = curl_init();
-//set the url, number of POST vars, POST data
-        curl_setopt($ch,CURLOPT_URL, $url);
-        curl_setopt($ch,$method, $count);
-        curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'User-Agent: curl/7.45.0',
-            'Content-Type:application/json'
-        ));
-        $result = curl_exec($ch);
-        curl_close($ch);
-        return $result;
-    }
+
 }

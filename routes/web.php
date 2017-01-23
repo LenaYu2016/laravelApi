@@ -25,6 +25,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('payment', 'PaymentController@index');
 Route::post('payment', 'PaymentController@pay');
+Route::post('send','SendMessageController@send');
+Route::get('message','SendMessageController@index');
 Route::post('handlegithub', 'GithubController@handleGithub');
 Route::post('githubpostgists', 'GithubController@githubPostGists')->middleware('web');
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');

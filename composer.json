@@ -14,6 +14,7 @@
         "lucadegasperi/oauth2-server-laravel": " 5.2.0",
         "sammyk/laravel-facebook-sdk": "^3.0",
         "stripe/stripe-php": "^4.4"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
